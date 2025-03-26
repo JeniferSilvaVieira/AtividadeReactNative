@@ -1,18 +1,23 @@
-import Vethome from './Screens/home';
-import {View, StyleSheet} from 'react-native';
-// Only import react-native-gesture-handler on native platforms
-import 'react-native-gesture-handler';
 
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import Vethome from './Screens/home';
+import Vetlogin from './Screens/login';
+  
 export default function App() {
+
+  const Stack = createStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <Vethome/>
-    </View>
+
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='login' component={Vetlogin}/>
+        <Stack.Screen name='home' component={Vethome}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+
   );
 }
-
-const styles = StyleSheet.create({
-  container:{
-    flex:1
-  }
-})
