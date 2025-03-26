@@ -1,5 +1,5 @@
 
-import vet from '../assets/vet.jpg';
+import vet from '../assets/vet.avif';
 import { ImageBackground } from 'react-native-web';
 import {Text, View, StyleSheet, Image} from 'react-native';
 
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
       paddingTop:90,
       fontSize:20,
       paddingBottom:50,
-      paddingLeft:33
+      paddingLeft:33,
     },
     img:{
       width:150,

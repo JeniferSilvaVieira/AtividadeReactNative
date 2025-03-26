@@ -1,6 +1,6 @@
 import {Text, View, StyleSheet, TextInput, Button} from 'react-native';
 
-export default function Vetlogin (){
+export default function Vetlogin ({navigation}){
     return(
         <View style={styles.container}>
           <Text style={styles.text1}>Super Vet!</Text>
@@ -18,6 +18,7 @@ export default function Vetlogin (){
             <Button 
             title="Logar"
             color="#532d0b"
+            onPress={() => navigation.navigate('home')}
             />
             </View>
         </View>
