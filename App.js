@@ -17,6 +17,7 @@ export default function Bottom() {
       <Bottom.Navigator
       initialRouteName='login'
       screenOptions={{
+        animation: 'shift',
         tabBarActiveTintColor:'rgb(54, 20, 4)',
         tabBarActiveBackgroundColor:'rgb(184, 99, 60)',
         tabBarInactiveBackgroundColor:'rgb(240, 156, 87)',
