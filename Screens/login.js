@@ -50,6 +50,6 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         height: 40,
         width:250,
-        paddingLeft:128,
+        paddingLeft:130,
     }
 })
