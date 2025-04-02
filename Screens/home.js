@@ -1,23 +1,23 @@
 
-import vet from '../assets/vet.avif';
+import vete from '../assets/vete.jpg';
 import { ImageBackground } from 'react-native-web';
 import {Text, View, StyleSheet, Image} from 'react-native';
 
 export default function Vethome(){
     return(
         <View style={styles.container}>
-            <ImageBackground style={{flex:1, width:'100%', height:'100%'}} source={vet}>
-            <Text style={styles.text1}>Super Vet da Jeni!</Text>
+            <ImageBackground style={{flex:1, width:'100%', height:'100%'}} source={vete}>
+            <Text style={styles.text1}><b>Super Vet da Jeni!</b></Text>
             <View style={styles.row}>
                 <Image style={styles.img} source={{uri:'https://www.cptcursospresenciais.com.br/blog/wp-content/uploads/2018/07/Os-diversos-campos-de-atua%C3%A7%C3%A3o-do-m%C3%A9dico-veterin%C3%A1rio_facebook.jpg'}}/>
                 <Image style={styles.img} source={{uri:'https://classeasaude.com.br/wp-content/uploads/2020/02/shutterstock_1479238910.jpg'}}/>
             </View>
-            <Text style={styles.text2}>Também com Pet Shop!</Text>
+            <Text style={styles.text2}><b>Também com Pet Shop!</b></Text>
             <View style={styles.row2}>
                 <Image style={styles.img} source={{uri:'https://objectstorage.sa-vinhedo-1.oraclecloud.com/n/axuh3s32sabm/b/cobasi-institutional-cms-bucket/o/prod/Crici%C3%BAma_acess%C3%B3rios.jpg'}}/>
                 <Image style={styles.img} source={{uri:'https://assets.multiplan.com.br/Multiplan/filer_public/2a/83/2a8347b2-c642-40d5-ab7d-c9f0c4b71cc6/patanatural_interna_jundiaishopping-02.jpg?ims=x800'}}/>
             </View> 
-            <Text style={styles.text3}>Veterinária Jenifer Vieira!</Text>
+            <Text style={styles.text3}><b>Veterinária Jenifer Vieira!</b></Text>
             </ImageBackground>
         </View>
     )

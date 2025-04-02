@@ -3,7 +3,7 @@ import {Text, View, StyleSheet, TextInput, Button} from 'react-native';
 export default function Vetlogin ({navigation}){
     return(
         <View style={styles.container}>
-          <Text style={styles.text1}>Super Vet!</Text>
+          <Text style={styles.text1}><b>Super Vet!</b></Text>
             <View style={styles.inputs}>
                 <TextInput
                 style={styles.input}
