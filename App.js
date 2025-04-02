@@ -3,10 +3,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 import { createStackNavigator } from '@react-navigation/stack';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 import Vethome from './Screens/home';
 import Vetlogin from './Screens/login';
 import Vetfeed from './Screens/feed';
+import Counter from './Screens/counter';
 
 function BottomTabs(){
   const Bottom = createBottomTabNavigator();
@@ -37,6 +39,12 @@ function BottomTabs(){
           ),
         }}/>
 
+        <Bottom.Screen name='Counter' component={Counter}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="counter" size={24} color="black" />
+          ),
+        }}/>
       </Bottom.Navigator>
   )
 }
