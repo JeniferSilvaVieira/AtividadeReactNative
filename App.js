@@ -4,11 +4,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 import { createStackNavigator } from '@react-navigation/stack';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 import Vethome from './Screens/home';
 import Vetlogin from './Screens/login';
 import Vetfeed from './Screens/feed';
 import Counter from './Screens/counter';
+import Vetproduto from './Screens/produto';
 
 function BottomTabs(){
   const Bottom = createBottomTabNavigator();
@@ -43,6 +45,13 @@ function BottomTabs(){
         options={{
           tabBarIcon: () => (
             <MaterialCommunityIcons name="counter" size={24} color="black" />
+          ),
+        }}/>
+
+        <Bottom.Screen name='Produto' component={Vetproduto}
+        options={{
+          tabBarIcon: () => (
+            <MaterialIcons name="production-quantity-limits" size={24} color="black" />
           ),
         }}/>
       </Bottom.Navigator>
