@@ -11,6 +11,7 @@ import Vetlogin from './Screens/login';
 import Vetfeed from './Screens/feed';
 import Counter from './Screens/counter';
 import Vetproduto from './Screens/produto';
+import Cadastro from './Screens/cadastro';
 
 function BottomTabs(){
   const Bottom = createBottomTabNavigator();
@@ -67,6 +68,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='login' component={Vetlogin}/>
+        <Stack.Screen name='cadastro' component={Cadastro}/>
         <Stack.Screen options={{headerShown:false}} name='home' component={BottomTabs}/>
       </Stack.Navigator>
     </NavigationContainer>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

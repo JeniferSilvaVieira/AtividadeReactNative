@@ -1,6 +1,22 @@
 import {Text, View, StyleSheet, TextInput, Button} from 'react-native';
+import {useState} from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../controller';
 
 export default function Vetlogin ({navigation}){
+
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+
+    const VerificarUser = () => {
+        signInWithEmailAndPassword(auth, email, senha).then(userCredential => {
+            console.log('usuario logado', userCredential.user.email);
+        })
+        .catch((error) => {
+            console.log('erro ao logar', error.message);
+        });
+    }
+
     return(
         <View style={styles.container}>
           <Text style={styles.text1}><b>Super Vet!</b></Text>
@@ -8,17 +24,30 @@ export default function Vetlogin ({navigation}){
                 <TextInput
                 style={styles.input}
                 placeholder="Email"
+                value={email}
+                onChangeText={setEmail}
                 />
                 <TextInput
                 style={styles.input}
                 placeholder="Senha"
+                value={senha}
+                onChangeText={setSenha}
+                secureTextEntry={true}
                 />
             </View>
             <View style={styles.botao}>
             <Button 
-            title="Logar"
+            title="Entrar"
             color="#532d0b"
-            onPress={() => navigation.navigate('home')}
+            onPress={VerificarUser}
+            
+            />
+            </View>
+            <View style={styles.botao}>
+            <Button 
+            title="Cadastre-se"
+            color="#532d0b"
+            onPress={() => navigation.navigate('cadastro')}
             />
             </View>
         </View>
