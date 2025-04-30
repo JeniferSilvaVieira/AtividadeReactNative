@@ -11,6 +11,7 @@ export default function Vetlogin ({navigation}){
     const VerificarUser = () => {
         signInWithEmailAndPassword(auth, email, senha).then(userCredential => {
             console.log('usuario logado', userCredential.user.email);
+            navigation.navigate('home');
         })
         .catch((error) => {
             console.log('erro ao logar', error.message);
