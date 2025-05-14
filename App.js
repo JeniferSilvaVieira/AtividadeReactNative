@@ -5,6 +5,7 @@ import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 import { createStackNavigator } from '@react-navigation/stack';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 import Vethome from './Screens/home';
 import Vetlogin from './Screens/login';
@@ -12,6 +13,7 @@ import Vetfeed from './Screens/feed';
 import Counter from './Screens/counter';
 import Vetproduto from './Screens/produto';
 import Cadastro from './Screens/cadastro';
+import Vetcadastrar from './Screens/cadastrarprodutos';
 
 function BottomTabs(){
   const Bottom = createBottomTabNavigator();
@@ -35,6 +37,13 @@ function BottomTabs(){
           ),
         }}/>
 
+        <Bottom.Screen name='Cadastrar' component={Vetcadastrar}
+        options={{
+          tabBarIcon: () => (
+            <FontAwesome6 name="registered" size={24} color="black" />
+          ),
+        }}/>
+
         <Bottom.Screen name='feed' component={Vetfeed}
         options={{
           tabBarIcon: () => (
@@ -55,6 +64,7 @@ function BottomTabs(){
             <MaterialIcons name="production-quantity-limits" size={24} color="black" />
           ),
         }}/>
+
       </Bottom.Navigator>
   )
 }
@@ -71,8 +81,7 @@ export default function App() {
         <Stack.Screen name='cadastro' component={Cadastro}/>
         <Stack.Screen options={{headerShown:false}} name='home' component={BottomTabs}/>
       </Stack.Navigator>
-    </NavigationContainer>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-
+    </NavigationContainer>                                                        
   );
 }
 

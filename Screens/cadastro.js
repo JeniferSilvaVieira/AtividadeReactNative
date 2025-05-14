@@ -12,11 +12,10 @@ export default function Cadastro ({navigation}){
         createUserWithEmailAndPassword(auth, email, senha).then((userCredential) => {
             console.log('cadastrado!', userCredential.user.email);
             navigation.navigate('home');
-          })
-          .catch((error) => {
+        })
+        .catch((error) => {
             console.log('erro', error.message);
-            
-          });
+        });
     }
 
     return(

@@ -1,12 +1,28 @@
 import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import Card from '../components/card';
 import {banco} from '../controller';
 import { collection, getDocs } from 'firebase/firestore';
 
 export default function Vetproduto() {
     const [produtos, setProdutos] = useState([])
-    
+
+    useEffect(() => {
+        async function carregarProdutos() {
+            try {
+                const querySnapshot = await getDocs(collection(banco, 'produtos'));
+                const lista = [];
+                querySnapshot.forEach((doc) => {
+                    lista.push({id:doc.id, ...doc.data()});
+                });
+                setProdutos(lista);
+            } catch (error) {
+                console.log("Erro ao buscar produtos:", error);
+            }
+        }
+        carregarProdutos();
+    }, []);
+
     return (
         <View style={styles.container}>
         {/* Array com map
@@ -24,7 +40,7 @@ export default function Vetproduto() {
                <Card
                 nome={item.nome}
                 valor={item.valor}
-                img={item.img}
+                img={item.imagem}
                />
             )}
             keyExtractor={item => item.id}
