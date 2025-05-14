@@ -11,7 +11,7 @@ export default function Vetlogin ({navigation}){
     const VerificarUser = () => {
         signInWithEmailAndPassword(auth, email, senha).then(userCredential => {
             console.log('usuario logado', userCredential.user.email);
-            navigation.navigate('home');
+            navigation.navigate('BottomTabs');
         })
         .catch((error) => {
             console.log('erro ao logar', error.message);
@@ -41,7 +41,6 @@ export default function Vetlogin ({navigation}){
             title="Entrar"
             color="#532d0b"
             onPress={VerificarUser}
-            
             />
             </View>
             <View style={styles.botao}>

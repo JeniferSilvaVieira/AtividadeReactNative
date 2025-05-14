@@ -1,14 +1,12 @@
 import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
 import { useState } from 'react';
 import Card from '../components/card';
+import {banco} from '../controller';
+import { collection, getDocs } from 'firebase/firestore';
 
 export default function Vetproduto() {
-    const [produtos, setProdutos] = useState([
-        {id:1, nome: 'Camiseta', valor: 9.99, img: 'https://cdn.b4c.inf.br/storage/amasterepi/1000/camiseta-mc-malha-pv-branca-tam-pp-1686158102.png'},
-        {id:2, nome: 'Moletom', valor: 159.99, img: 'https://img.freepik.com/psd-premium/modelo-de-capuz-preto_632498-17004.jpg?semt=ais_hybrid&w=740'},
-        {id:3, nome: 'Tênis', valor: 149.99, img: 'https://imgcentauro-a.akamaihd.net/1200x1200/97360651A9.jpg'},
-        {id:4, nome: 'Calça', valor: 189.00, img: 'https://acdn-us.mitiendanube.com/stores/003/859/035/products/4b0cf032e73b8f1db3051c6ac9684c02-266c122c062ad6393217085351637450-1024-1024.jpg'},
-    ])
+    const [produtos, setProdutos] = useState([])
+    
     return (
         <View style={styles.container}>
         {/* Array com map
