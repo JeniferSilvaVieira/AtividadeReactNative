@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, TextInput, Button} from 'react-native';
+import {Text, View, StyleSheet, TextInput, Button, TouchableOpacity} from 'react-native';
 import {useState} from 'react';
 import { createUserWithEmailAndPassword, getAuth} from "firebase/auth";
 import { auth } from '../controller';
@@ -17,7 +17,6 @@ export default function Cadastro ({navigation}){
             console.log('erro', error.message);
             
           });
-
     }
 
     return(
@@ -46,13 +45,16 @@ export default function Cadastro ({navigation}){
             
             />
             </View>
-            <View style={styles.botao}>
+            {/* <View style={styles.botao}>
             <Button 
             title="Voltar para o Login"
             color="#532d0b"
             onPress={() => navigation.navigate('login')}
             />
-            </View>
+            </View> */}
+            <TouchableOpacity>
+                <Text style={styles.txtcadast}>Cadastre-se</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -83,5 +85,9 @@ const styles = StyleSheet.create({
         height: 40,
         width:250,
         paddingLeft:130,
+    },
+    txtcadast:{
+        fontSize:20,
+        backgroundColor: '#F4A460'
     }
 })
