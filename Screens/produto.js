@@ -3,8 +3,9 @@ import { useState, useEffect} from 'react';
 import Card from '../components/card';
 import {banco} from '../controller';
 import { collection, getDocs } from 'firebase/firestore';
+import { useCarrinho } from '../components/contextCarrinho';
 
-export default function Vetproduto() {
+export default function Vetproduto(navigation) {
     const [produtos, setProdutos] = useState([])
 
     useEffect(() => {
@@ -41,6 +42,10 @@ export default function Vetproduto() {
                 nome={item.nome}
                 valor={item.valor}
                 img={item.imagem}
+                comprar={() => {
+                    adicionarProduto(item);
+                    navigation.navigate('carrinho');
+                }}
                />
             )}
             keyExtractor={item => item.id}

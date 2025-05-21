@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import { contextCarrinho } from './components/contextCarrinho';
 
 import Vethome from './Screens/home';
 import Vetlogin from './Screens/login';
@@ -75,13 +76,15 @@ export default function App() {
 
   return (
 
+    <contextCarrinho>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='login' component={Vetlogin}/>
         <Stack.Screen name='cadastro' component={Cadastro}/>
         <Stack.Screen options={{headerShown:false}} name='home' component={BottomTabs}/>
       </Stack.Navigator>
-    </NavigationContainer>                                                        
+    </NavigationContainer>   
+    </contextCarrinho>                                                     
   );
 }
 
