@@ -5,8 +5,9 @@ import {banco} from '../controller';
 import { collection, getDocs } from 'firebase/firestore';
 import { useCarrinho } from '../components/contextCarrinho';
 
-export default function Vetproduto(navigation) {
+export default function Vetproduto({navigation}) {
     const [produtos, setProdutos] = useState([])
+    const {adicionarProduto} = useCarrinho()
 
     useEffect(() => {
         async function carregarProdutos() {
@@ -44,7 +45,7 @@ export default function Vetproduto(navigation) {
                 img={item.imagem}
                 comprar={() => {
                     adicionarProduto(item);
-                    navigation.navigate('carrinho');
+                    navigation.navigate('Carrinho');
                 }}
                />
             )}

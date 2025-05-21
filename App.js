@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import { contextCarrinho } from './components/contextCarrinho';
+import { ContextCarrinho } from './components/contextCarrinho';
 
 import Vethome from './Screens/home';
 import Vetlogin from './Screens/login';
@@ -15,6 +15,7 @@ import Counter from './Screens/counter';
 import Vetproduto from './Screens/produto';
 import Cadastro from './Screens/cadastro';
 import Vetcadastrar from './Screens/cadastrarprodutos';
+import Vetcarrinho from './Screens/carrinho';
 
 function BottomTabs(){
   const Bottom = createBottomTabNavigator();
@@ -66,6 +67,13 @@ function BottomTabs(){
           ),
         }}/>
 
+        <Bottom.Screen name='Carrinho' component={Vetcarrinho}
+        options={{
+          tabBarIcon: () => (
+            <MaterialIcons name="production-quantity-limits" size={24} color="black" />
+          ),
+        }}/>
+
       </Bottom.Navigator>
   )
 }
@@ -76,7 +84,7 @@ export default function App() {
 
   return (
 
-    <contextCarrinho>
+    <ContextCarrinho>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='login' component={Vetlogin}/>
@@ -84,7 +92,7 @@ export default function App() {
         <Stack.Screen options={{headerShown:false}} name='home' component={BottomTabs}/>
       </Stack.Navigator>
     </NavigationContainer>   
-    </contextCarrinho>                                                     
+    </ContextCarrinho>                                                     
   );
 }
 
